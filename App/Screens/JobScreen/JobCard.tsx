@@ -90,12 +90,12 @@ const styles = StyleSheet.create({
   textContainer: {
     gap: 3,
     alignItems: 'flex-start',
+    maxWidth: 200,
   },
   title: {
     color: '#242C5D',
     fontSize: 16,
     fontWeight: '600',
-    maxWidth: 200,
   },
   subtitle: {
     color: '#696969',
