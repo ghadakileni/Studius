@@ -1,58 +1,58 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet,TouchableOpacity } from 'react-native';
-// import { TouchableOpacity } from 'react-native-gesture-handler';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faBookmark } from '@fortawesome/free-solid-svg-icons/faBookmark';
-// import { faBookmark as farBookmark } from '@fortawesome/free-regular-svg-icons/faBookmark';
-import {useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
-const JobCard = ({ maxWidth, title='UX/UI Designer', company='UFR Ingemedia', description='Lorem ipsum dolor sit amet consectetur. Placerat pharetra sit', emplacement='Toulon', hSemaine='20H/sem', hSalaire='€15/h' }) => {
-  
+const JobCard = ({ maxWidth, title = 'UX/UI Designer', company = 'UFR Ingemedia', description = 'Lorem ipsum dolor sit amet consectetur. Placerat pharetra sit', emplacement = 'Toulon', hSemaine = '20H/sem', hSalaire = '€15/h' }) => {
+
     const navigation = useNavigation<StackNavigationProp<any>>();
     const [isBookmarked, setIsBookmarked] = useState(false);
 
-  const handleBookmarkToggle = () => {
-    setIsBookmarked(!isBookmarked);
-  };
+    const truncatedDescription = description.length > 140 ? description.substring(0, 140) + '...' : description;
 
-  return (
-    <TouchableOpacity onPress={() => {navigation.push('listing/133')}}>
-      <View style={[styles.container, { maxWidth }]}>
-        <View style={styles.subContainer}>
-          <View style={styles.brandContainer}>
-            <View style={styles.iconContainer}>
-              <View style={styles.iconCircle} />
+    const handleBookmarkToggle = () => {
+        setIsBookmarked(!isBookmarked);
+    };
+
+    return (
+        <TouchableOpacity onPress={() => { navigation.push('') }}>
+            <View style={[styles.container, { maxWidth }]}>
+                <View style={styles.subContainer}>
+                    <View style={styles.brandContainer}>
+                        <View style={styles.iconContainer}>
+                            <View style={styles.iconCircle} />
+                        </View>
+                        <View style={styles.textContainer}>
+                            <Text style={styles.title}>{title}</Text>
+                            <Text style={styles.subtitle}>{company}</Text>
+                        </View>
+                    </View>
+                    <TouchableOpacity onPress={handleBookmarkToggle}>
+                        <FontAwesomeIcon icon={isBookmarked ? faBookmark : faBookmark} style={styles.bookmark} />
+                    </TouchableOpacity>
+                </View>
+                <Text style={styles.description}>{truncatedDescription}</Text>
+                <View style={styles.divider} />
+                <View style={styles.infoContainer}>
+                    <View style={styles.infoItem}>
+                        <FontAwesome5 name='map-marker-alt' style={styles.infoIcon} />
+                        <Text style={styles.infoText}>{emplacement}</Text>
+                    </View>
+                    <View style={styles.infoItem}>
+                        <FontAwesome5 name='briefcase' style={styles.infoIcon} />
+                        <Text style={styles.infoText}>{hSemaine} h/sem</Text>
+                    </View>
+                    <View style={styles.infoItem}>
+                        <FontAwesome5 name='money-bill' style={styles.infoIcon} />
+                        <Text style={styles.infoText}>{hSalaire}</Text>
+                    </View>
+                </View>
             </View>
-            <View style={styles.textContainer}>
-              <Text style={styles.title}>{title}</Text>
-              <Text style={styles.subtitle}>{company}</Text>
-            </View>
-          </View>
-          <TouchableOpacity onPress={handleBookmarkToggle}>
-            <FontAwesomeIcon icon={isBookmarked ? faBookmark : faBookmark} style={styles.bookmark} />
-          </TouchableOpacity>
-        </View>
-        <Text style={styles.description}>{description}</Text>
-        <View style={styles.divider} />
-        <View style={styles.infoContainer}>
-          <View style={styles.infoItem}>
-              <FontAwesome5 name='map-marker-alt' style={styles.infoIcon} />
-              <Text style={styles.infoText}>{emplacement}</Text>
-          </View>
-          <View style={styles.infoItem}>
-              <FontAwesome5 name='briefcase' style={styles.infoIcon} />
-              <Text style={styles.infoText}>{hSemaine}</Text>
-          </View>
-          <View style={styles.infoItem}>
-              <FontAwesome5 name='money-bill' style={styles.infoIcon} />
-              <Text style={styles.infoText}>{hSalaire}</Text>
-          </View>
-        </View>
-      </View>
-    </TouchableOpacity>
-  );
+        </TouchableOpacity>
+    );
 };
 
 const styles = StyleSheet.create({
@@ -64,6 +64,7 @@ const styles = StyleSheet.create({
     gap: 10,
     width: '100%', 
     maxWidth: 226,
+    marginTop: 10,
   },
   subContainer: {
     flexDirection: 'row',
