@@ -18,7 +18,7 @@ const JobCard = ({ maxWidth, title = 'UX/UI Designer', company = 'UFR Ingemedia'
     };
 
     return (
-        <TouchableOpacity onPress={() => { navigation.push('') }}>
+        <TouchableOpacity onPress={() => { navigation.push('detailJobScreen') }}>
             <View style={[styles.container, { maxWidth }]}>
                 <View style={styles.subContainer}>
                     <View style={styles.brandContainer}>

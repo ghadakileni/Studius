@@ -7,6 +7,8 @@ import mesLogements from '../Screens/ProfilScreen/MesLogements';
 import MesCandidatures from '../Screens/ProfilScreen/MesCandidatures';
 import JobScreen from '../Screens/JobScreen/JobScreen';
 
+import DetailJobScreen from '../Screens/DetailJobScreen/DetailJobScreen';
+
 
 const Stack = createStackNavigator();
 
@@ -17,7 +19,7 @@ export default function HomeNavigation() {
       <Stack.Screen name="profil-screen" component={ProfilScreen} />
       <Stack.Screen name="mes-logements" component={mesLogements} />
       <Stack.Screen name="mes-candidatures" component={MesCandidatures} />
-      <Stack.Screen name="jobs" component={JobScreen} />
+      <Stack.Screen name="detailJobScreen" component={DetailJobScreen} />
     </Stack.Navigator>
   )
 }
