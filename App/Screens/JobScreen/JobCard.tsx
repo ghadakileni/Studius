@@ -71,11 +71,11 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     justifyContent: 'space-between',
     gap: 48,
+    position: 'relative',
   },
   brandContainer: {
     flexDirection: 'row',
     gap: 12,
-    position: 'relative',
   },
   iconContainer: {
     width: 30,
