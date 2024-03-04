@@ -75,6 +75,7 @@ const styles = StyleSheet.create({
   brandContainer: {
     flexDirection: 'row',
     gap: 12,
+    position: 'relative',
   },
   iconContainer: {
     width: 30,
@@ -105,6 +106,8 @@ const styles = StyleSheet.create({
   bookmark: {
     color: '#D62528',
     fontSize: 12,
+    position: 'absolute',
+    right: 0,
   },
   description: {
     color: '#353558',
