@@ -25,9 +25,9 @@ export default function TabNavigation() {
             fontWeight: "400",
         },
         tabBarStyle: {
-            // height: 90,
-            marginTop:5,
-            alignItems: 'center',
+          padding: 2, 
+          height: 60,       
+          alignItems: 'center',
         }
     }}>
       <Tab.Screen 

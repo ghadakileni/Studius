@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faBookmark } from '@fortawesome/free-solid-svg-icons/faBookmark';
@@ -23,7 +23,7 @@ const JobCard = ({ maxWidth, title = 'UX/UI Designer', company = 'UFR Ingemedia'
                 <View style={styles.subContainer}>
                     <View style={styles.brandContainer}>
                         <View style={styles.iconContainer}>
-                            <View style={styles.iconCircle} />
+                          <Image source={require('../../../assets/images/suggestion-image.png')} style={{ width: 30, height: 30, borderRadius: 9999 }} />
                         </View>
                         <View style={styles.textContainer}>
                             <Text style={styles.title}>{title}</Text>
@@ -95,6 +95,7 @@ const styles = StyleSheet.create({
     color: '#242C5D',
     fontSize: 16,
     fontWeight: '600',
+    maxWidth: 200,
   },
   subtitle: {
     color: '#696969',
